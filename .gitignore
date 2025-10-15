@@ -59,12 +59,9 @@ __pycache__/
 local.settings.json
 
 # Any logs
-data/*
 output/*
 logs/*
 *.DS_Store
-app-malt/data/*
 app-malt/logs/*
-app-traffic-analysis/data/*
 app-traffic-analysis/logs/*
 app-CRG/logs/*
