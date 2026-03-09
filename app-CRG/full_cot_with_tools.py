@@ -60,7 +60,9 @@ def rag_constraint_search(query, num_extraction=6):
 
     results = search_client.search(
         search_text='',
-        vector=Vector(value=generate_embeddings(query), k=num_extraction, fields="constraintVector"),
+        vector=generate_embeddings(query),
+        top_k=num_extraction,
+        vector_fields="constraintVector",
         select=["label", "constraint"]
     )
 
@@ -76,7 +78,9 @@ def rag_tool_search(query, num_extraction=1):
 
     results = search_client.search(
         search_text='',
-        vector=Vector(value=generate_embeddings(query), k=num_extraction, fields="descriptionVector"),
+        vector=generate_embeddings(query),
+        top_k=num_extraction,
+        vector_fields="descriptionVector",
         select=["description", "tool"]
     )
 
